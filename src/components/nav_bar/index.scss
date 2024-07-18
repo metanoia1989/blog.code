@@ -24,10 +24,14 @@
         border-radius: .4em;
         text-decoration: none;
         color: var(--accent);
-        &::after {
+
+      }
+      .subtitle{
+        position: relative;
+        &::before{
           content: '';
           position: absolute;
-          right: 6px;
+          left: -13px;
           bottom: 50%;
           transform: translateY(50%);
           width: .3em;
@@ -35,7 +39,7 @@
           background: var(--accent);
           border-radius: 50%;
         }
-      }
+      } 
       &:hover {
         .title {
           color: white;
@@ -46,6 +50,9 @@
         }
         .subtitle {
           color: var(--primary);
+          &::before{
+            display: none;
+          }
         }
       }
     }
@@ -122,6 +129,9 @@
         }
         .subtitle {
           font-size: 14px;
+          &::before {
+            display: none;
+          }
         }
       }
     }

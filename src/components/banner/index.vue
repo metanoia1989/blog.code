@@ -94,7 +94,8 @@ export default {
 </script>
 
 <template>
-  <div class="banner">
+  <div class="banner-placeholder"></div>
+  <!-- <div class="banner">
     <div class="banner-content">
       <div class="banner-title">
         <h2>{{ poetryTitle }}</h2>
@@ -105,7 +106,7 @@ export default {
         </p>
       </div>
     </div>
-  </div>
+  </div> -->
 </template>
 
 <style lang="scss" scoped>

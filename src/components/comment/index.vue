@@ -114,7 +114,7 @@ export default {
       }).then(() => {
         this.setActiveComment(this.currentComment)
         this.installUtterances()
-        this.installTwikoo()
+        import.meta.env.VITE_TWIKOO_ID && this.installTwikoo()
       })
     },
   },
@@ -125,14 +125,15 @@ export default {
   <div class="comments">
     <div class="comments-header">
       <h2><SvgIcon name="comment" /> 评论</h2>
-      <ul ref="commentsNav" class="comments-nav" @click="setCurrentComment">
+      <!-- 只保留 utterances 即可 -->
+      <!-- <ul ref="commentsNav" class="comments-nav" @click="setCurrentComment">
         <li class="utterances-toggle active">
           Utterances
         </li>
         <li class="twikoo-toggle">
           Twikoo
         </li>
-      </ul>
+      </ul> -->
     </div>
     <div v-loading="loading" class="comments-body">
       <transition name="slide">

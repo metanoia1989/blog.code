@@ -30,53 +30,61 @@
 
 export default {
   // 博客基础配置
-  title: 'wallleap',
-  subtitle: 'ルー・ワン',
-  description: 'Luwang\'s blog',
-  keywords: 'Luwang, blog, wallleap',
+  title: "进击的自媒体",
+  subtitle: '自由人',
+  description: 'Adam\'s blog',
+  keywords: 'Adam Smith, personal blog, ',
   logo: './logo.svg',
   favicon16: './favicon.ico',
   favicon32: './favicon.ico',
-  createdTime: '2019-08-01',
-  icp: '赣ICP备20000895号-1',
+  createdTime: '2024-07-17',
+  icp: '天字第一号',
   icpLink: '//beian.miit.gov.cn/',
   beian: '',
   beianLink: '',
   // 关于页二维码
   alipay_qr: '//cdn.wallleap.cn/img/custom/donate/alipayQr.jpg',
+
   // GitHub Issues 配置
-  username: 'wallleap',
-  repository: 'myblogs',
-  friendsRepo: 'friends',
+  username: 'metanoia1989',
+  repository: 'blog', // 文章，文章跟碎碎念分开，保证获取上下篇文章时，不会查询到碎碎念  
+  friendsRepo: 'blog.friends', // 友链 
+  inspirationRepo: 'blog.thoughts', // 碎碎念 
+
   // 您的信息
-  author: 'Luwang',
-  email: 'luwang@oicode.cn',
-  link: '//luwang.info',
-  github: '//github.com/wallleap',
+  author: 'Adam Smith',
+  email: 'sogaxili@gmail.com',
+  link: '//blog.52laoge.com',
+  github: '//github.com/metanoia1989',
+
   // 友链信息
-  name: 'wallleap',
-  url: '//myblog.wallleap.cn',
-  avatar: '//gravatar.wallleap.cn/avatar/be1ccdcf025a92b98a92e331e1b3662a?size=256',
-  desc: 'Luwang\'s blog',
+  name: 'AdamSmith',
+  url: '//blog.52laoge.com',
+  avatar: '//pics.52laoge.com/images/19261473.jpeg',
+  desc: 'Adam Smith\'s blog',
+
   // 文章相关
   pageSize: 12,
-  defaultCover: '//cdn.wallleap.cn/img/post/1.jpg',
+  defaultCover: '//pics.52laoge.com/images/default-cover.jpg',
   // 图片加载失败时显示，请将图片下载至你自己的存储空间，并使用自己的 CDN 引入
-  errorImg: '//cdn.wallleap.cn/img/pic/cover/image_processing20200524-7638-6itpxj.gif',
+  errorImg: '//pics.52laoge.com/images/loading.gif',
+
   // 评论配置
   utterances: {
     code: `<script src="https://utteranc.es/client.js"
-      repo="wallleap/comments"
-      issue-term="title"
-      label="Comment"
-      theme="github-light"
-      crossorigin="anonymous"
-      async>
-    </script>`,
+        repo="metanoia1989/blog.comments"
+        issue-term="title"
+        label="✨💬✨"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+      </script>`,
   },
+
   twikoo: {
     src: '//cdn.staticfile.org/twikoo/1.6.22/twikoo.all.min.js',
   },
+
   // Clarity 微软数据分析服务
   clarity: 'jtdbmcusnq',
 }

@@ -1,6 +1,6 @@
 {  
-  "name": "wallleap",  
-  "short_name": "wallleap",  
+  "name": "adam-blog",  
+  "short_name": "blog",  
   "theme_color": "#ffffff",  
   "background_color": "#ffffff",  
   "display": "standalone",  

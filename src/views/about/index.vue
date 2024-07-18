@@ -117,7 +117,8 @@ export default {
       <div v-loading="loading" class="about-content">
         <Markdown :content="about" />
       </div>
-      <div class="like">
+      <!-- 直接干掉赞赏页面，我不需要赞赏，哈哈 -->
+      <!-- <div class="like">
         <figure class="like-img">
           <img src="../../assets/images/like.png" alt="like">
         </figure>
@@ -135,7 +136,7 @@ export default {
         <figure class="alipay-qr">
           <img :src="$config.alipay_qr" alt="支付宝二维码">
         </figure>
-      </div>
+      </div> -->
     </div>
     <Comment />
   </div>

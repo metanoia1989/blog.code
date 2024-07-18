@@ -12,6 +12,8 @@ import {
   searchPostsAPI,
 } from '@/api/github.js'
 import { formatFriend, formatPost } from '@/utils/format.js'
+import { AxiosError } from 'axios'
+import { getClassName } from '../../utils'
 
 function state() {
   return {
@@ -211,6 +213,49 @@ const actions = {
       comment: true,
     }
     return formatPost(post)
+  },
+  /**
+   * 获取文章的上一篇和下一篇
+   * @param {*} context
+   * @param {*} param1 number 文章 number
+   * @returns posts
+   */
+  async getRelativePostsAction(context, { number }) {
+    // number = Number(number)
+    const prev = await getPostAPI(number - 1).catch((err) => {
+      return Promise.resolve({ status: 200, data: null })
+    })
+    const next = await getPostAPI(number + 1).catch((err) => {
+      return Promise.resolve({ status: 200, data: null })
+    })
+
+
+    const posts = []
+
+    if (!(next instanceof Error) && next.status === 200 ) {
+      !!next.data && posts.push(next.data)
+    }
+
+    if (!(prev instanceof Error) && prev.status === 200) {
+      !!prev.data && posts.push(prev.data)
+    }
+
+    return posts.map((post) => {
+      return {
+        number: post.number,
+        id: post.id,
+        title: post.title,
+        url: post.url,
+        created_at: post.created_at,
+        updated_at: post.updated_at,
+        body: post.body,
+        tags: post.labels,
+        tags_url: post.labels_url,
+        category: post.milestone,
+        hot: 1,
+        comment: true,
+      }
+    }).map(formatPost)
   },
   async getAboutAction() {
     const res = await getAboutAPI().catch((err) => {

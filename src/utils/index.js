@@ -195,3 +195,8 @@ export function sortArchiveMap(archiveMap) {
   })
   return archiveMap
 }
+
+
+export function getClassName(obj) {
+  return Object.prototype.toString.call(obj).slice(8, -1);
+}

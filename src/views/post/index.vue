@@ -56,6 +56,7 @@ export default {
       getPostsCountAction: 'github/getPostsCountAction',
       getPostsAction: 'github/getPostsAction',
       getPostAction: 'github/getPostAction',
+      getRelativePostsAction: 'github/getRelativePostsAction',
       increaseHotAction: 'leancloud/increaseHotAction',
     }),
     async getPostsCountFn() {
@@ -112,28 +113,35 @@ export default {
       this.toc = parsedMarked?.toc
       this.content = parsedMarked?.content
     },
+    /** 
+     * 计算上一篇和下一篇文章 
+     */
     async generateRelatesFn() {
-      const LOOP = 2
-      const postList = await this.getPostsFn().catch((err) => {
-        this.$message({
-          content: '获取文章列表失败',
-          type: 'error',
-        })
+      const postList = await this.getRelativePostsAction({ 
+        number: this.postNumber 
+      }).catch((err) => {
+        console.log(err)
+        // this.$message({
+        //   content: '获取关系文章失败',
+        //   type: 'error',
+        // })
         throw new Error(err)
       })
-      this.relates = []
-      while (true) {
-        const len = postList.length
-        const index = Math.floor(Math.random() * len)
-        const post = postList[index]
-        const num = this.postNumber
-        if (this.relates.includes(post))
-          continue
-        if (post.number !== num)
-          this.relates.push(post)
-        if (this.relates.length >= LOOP)
-          break
-      }
+      this.relates = postList
+      // const LOOP = 2
+      // 这里竟然写成循环，有点逆天了 
+      // while (true) {
+      //   const len = postList.length
+      //   const index = Math.floor(Math.random() * len)
+      //   const post = postList[index]
+      //   const num = this.postNumber
+      //   if (this.relates.includes(post))
+      //     continue
+      //   if (post.number !== num)
+      //     this.relates.push(post)
+      //   if (this.relates.length >= LOOP)
+      //     break
+      // }
     },
     initAllData() {
       this.post = {}

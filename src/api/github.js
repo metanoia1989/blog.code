@@ -1,9 +1,10 @@
 import config from '@/config'
 import { github, githubGraphql } from '@/utils/request'
 
-const { username, repository, friendsRepo } = config
+const { username, repository, friendsRepo, inspirationRepo } = config
 const blog = `/repos/${username}/${repository}`
 const friends = `/repos/${username}/${friendsRepo}`
+const inspiration = `/repos/${username}/${inspirationRepo}`
 
 /**
  * 获取文章总数
@@ -126,9 +127,10 @@ export function getFriendsAPI({ page = 1, pageSize = 12, filter = '' }) {
  * @param {*} param0 page 当前页码 pageSize 每页数量
  * @returns Promise
  */
-export function getInspirationAPI({ page = 1, pageSize = 12 }) {
+export function getInspirationAPI({ page = 1, pageSize = 12, filter = '' }) {
   return github({
-    url: `${blog}/issues?state=closed&labels=inspiration&page=${page}&per_page=${pageSize}`,
+    // url: `${blog}/issues?state=closed&labels=inspiration&page=${page}&per_page=${pageSize}`,
+    url: `${inspiration}/issues?page=${page}&per_page=${pageSize}${filter}`,
   })
 }
 

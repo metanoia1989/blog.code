@@ -36,7 +36,8 @@ if (appId && appKey && serverURLs){
 setTheme()
 handleError(config.errorImg)
 
-if (clarity) {
+// 干掉 Clarity 微软数据分析服务
+if (false && clarity) {
   const script = document.createElement('script')
   script.type = 'text/javascript'
   script.innerHTML = `
