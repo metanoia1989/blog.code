@@ -43,7 +43,7 @@ jobs:
         with:
           personal_token: ${{ secrets.PERSONAL_TOKEN }}
           external_repository: metanoia1989/blog
-          publish_branch: master
+          publish_branch: gh-pages
           user_name: metanoia1989
           user_email: sogaxili@gmail.com
           commit_message: ${{ github.event.head_commit.message }}
