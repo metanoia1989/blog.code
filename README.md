@@ -60,6 +60,14 @@ Vite 加载 env 文件
 | wallleap | <https://myblog.wallleap.cn> | ![online](https://img.shields.io/badge/online-true.svg) |
 
 
+总共五个托管仓库 
+
+博客文章 https://github.com/metanoia1989/blog
+源代码 https://github.com/metanoia1989/blog.code
+碎碎念 https://github.com/metanoia1989/blog.thoughts 
+评论留言 https://github.com/metanoia1989/blog.comments
+友情链接 https://github.com/metanoia1989/blog.friends
+
 ## 部署开发步骤 
 
 ### issues 仓库设置 

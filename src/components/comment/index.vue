@@ -114,7 +114,8 @@ export default {
       }).then(() => {
         this.setActiveComment(this.currentComment)
         this.installUtterances()
-        import.meta.env.VITE_TWIKOO_ID && this.installTwikoo()
+        // 直接干掉 twikoo 的评论系统 
+        // this.installTwikoo()
       })
     },
   },
