@@ -42,16 +42,16 @@ jobs:
         uses: peaceiris/actions-gh-pages@v3
         with:
           personal_token: ${{ secrets.PERSONAL_TOKEN }}
-          external_repository: wallleap/wallleap.github.io
+          external_repository: metanoia1989/blog
           publish_branch: master
-          user_name: wallleap
-          user_email: 15579576761@163.com
+          user_name: metanoia1989
+          user_email: sogaxili@gmail.com
           commit_message: ${{ github.event.head_commit.message }}
           full_commit_message: ${{ github.event.head_commit.message }}
           publish_dir: ./dist
           force_orphan: true
           allow_empty_commit: true
-          cname: myblog.wallleap.cn
+          cname: blog.52laoge.com
       - name: Get the output
         run: |
           echo "${{ steps.deploy.outputs.notify }}"
