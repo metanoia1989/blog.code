@@ -38,5 +38,15 @@
       <script src="<%= js %>"></script>
     <% } %>
     <script type="module" src="/src/main.js"></script>
+
+    <!-- Google tag (gtag.js) Gooogle 访问统计 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-JLWVNELST6"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-JLWVNELST6');
+    </script>
   </body>
 </html>
